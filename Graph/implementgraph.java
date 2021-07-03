@@ -2,7 +2,7 @@ import java.util.*;
 class Graph
 {
     int v;
-   ArrayList<Integer> graph[];
+    ArrayList<Integer> graph[];
     boolean visited[];
     Graph(int v)
     {

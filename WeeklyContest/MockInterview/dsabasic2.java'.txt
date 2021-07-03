@@ -1,0 +1,74 @@
+Balaned brackets 
+You are given string with brackets, you need to check if it is balanced brackets or not
+{[()]} 
+Yes
+{[(])}
+No
+{{[[(())]]}}
+Yes
+
+BalanedBracket(Strint brc)
+{
+    Stack <Character> st=new Stack<>();
+    for(int i=0;i<brc.length();i++)
+    {
+        if(brc.charAt(i)=='('||brc.charAt(i)=='{'||brc.charAt(i)=='[')
+        st.push(brc.charAt(i));
+        else
+        {
+            if(st.empty())
+            {
+                System.out.print("Not Balaned");
+                return;
+            }
+            else
+            {
+              char c=brc.charAt(i);
+              switch(c)
+              {
+                  case ')':
+                  if(st.peek()=='(')
+                  {
+                      st.pop();
+                  }
+                  else
+                  {
+                System.out.print("Not Balaned");
+                return;
+                  }
+                  break;
+
+                  case '}'
+                  if(st.peek()=='{')
+                  {
+                      st.pop();
+                  }
+                  else
+                  {
+                System.out.print("Not Balaned");
+                return;
+                  }
+                  break;
+                  
+                  case ']':
+                  if(st.peek()=='[')
+                  {
+                      st.pop();
+                  }
+                  else
+                  {
+                System.out.print("Not Balaned");
+                return;
+                  }
+                  break;
+
+              }
+            }
+        }
+    }
+
+    if(st.empty())
+    System.out.print("Balaned");
+    else
+    System.out.print("Not Balaned)
+}
